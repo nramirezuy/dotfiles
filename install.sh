@@ -1,9 +1,26 @@
 #!/bin/sh -e
 
+# Ask user for username and password
+USERNAME='&'
+while ! echo "$USERNAME" | grep "^[a-z_][a-z0-9_-]*$" > /dev/null 2>&1 \
+    || id -u "$USERNAME" > /dev/null 2>&1 ; do
+  read -p "username: " USERNAME
+done
+
+PASSWORD=''
+PASSWORD_TO_COMPARE='not a password'
+while ! [ "$PASSWORD" = "$PASSWORD_TO_COMPARE" ] ; do
+  read -sp "password: " PASSWORD
+  echo
+  read -sp "passwrod again: " PASSWORD_TO_COMPARE
+  echo
+done
+unset PASSWORD_TO_COMPARE
+
 # Ask user for hostname to use
 read -p 'Enter a hostname: ' HOSTNAME
 
-# Ark use for timezone
+# Ark user for timezone
 TIMEZONE=$(tzselect)
 
 # Ask user an unmounted drive and that exists
@@ -81,5 +98,5 @@ echo $HOSTNAME > /mnt/etc/hostname
 echo 'Executing chroot.sh'
 if [ -f chroot.sh ]; then
   cp chroot.sh /mnt/chroot.sh
-  arch-chroot /mnt bash chroot.sh $TIMEZONE $DRIVE
+  arch-chroot /mnt bash chroot.sh $TIMEZONE $DRIVE $USERNAME $PASSWORD
 fi

@@ -45,3 +45,11 @@ DRIVE=$2
 pacman --noconfirm --needed -S grub
 grub-install --target=i386-pc $DRIVE
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# Register username, password and create home
+USERNAME=$3
+PASSWORD=$4
+useradd -m -g wheel -s /bin/bash "$USERNAME" > /dev/null 2>&1 ||
+  useradd -m -G wheel "$USERNAME" && mkdir -p /home/"$USERNAME" &&
+    chown "$USERNAME":wheel /home/"$USERNAME"
+echo "$USERNAME":"$PASSWORD" | chpasswd
