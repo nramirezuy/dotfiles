@@ -34,7 +34,7 @@ pacman --noconfirm --needed -S base-devel git vim
 # Prettify pacman
 sed -i "s/^#Color/Color" /etc/pacman.conf
 grep "ILoveCandy" /etc/pacman.conf > /dev/null ||
-  sed "/^Color/a ILoveCandy" /etc/pacman.conf
+  sed -i "/^Color/a ILoveCandy" /etc/pacman.conf
 
 # Use all cores for compilation
 sed -i "s/-j2/-j$(nproc);s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
