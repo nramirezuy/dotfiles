@@ -37,7 +37,7 @@ grep "ILoveCandy" /etc/pacman.conf > /dev/null ||
   sed -i "/^Color/a ILoveCandy" /etc/pacman.conf
 
 # Use all cores for compilation
-sed -i "s/-j2/-j$(nproc);s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
+sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
 # Install yay
 su - $USERNAME &&
