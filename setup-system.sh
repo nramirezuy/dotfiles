@@ -32,7 +32,7 @@ pacmaninstall() {
 
 # Install programs.csv
 while IFS=, read -r tag program comment; do
-  if [ "$tag" -eq "TAG" ]; then
+  if [ "$tag" = "TAG" ]; then
     continue
   fi
 
