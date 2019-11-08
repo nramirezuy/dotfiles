@@ -53,3 +53,6 @@ useradd -m -g wheel -s /bin/bash "$USERNAME" > /dev/null 2>&1 ||
   useradd -m -G wheel "$USERNAME" && mkdir -p /home/"$USERNAME" &&
     chown "$USERNAME":wheel /home/"$USERNAME"
 echo "$USERNAME":"$PASSWORD" | chpasswd
+
+echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
+chmod 440 /etc/sudoers.d/wheel
