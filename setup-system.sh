@@ -27,7 +27,7 @@ cd /tmp
 rm -fr yay
 
 pacmaninstall() {
-  pacman --noconfirm --needed -S "$1" 
+  sudo pacman --noconfirm --needed -S "$1" 
 }
 
 # Install programs.csv
