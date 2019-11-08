@@ -32,7 +32,7 @@ pacman --noconfirm -Sy archlinux-keyring
 pacman --noconfirm --needed -S base-devel git vim
 
 # Prettify pacman
-sed -i "s/^#Color/Color" /etc/pacman.conf
+sed -i "s/^#Color/Color/" /etc/pacman.conf
 grep "ILoveCandy" /etc/pacman.conf > /dev/null ||
   sed -i "/^Color/a ILoveCandy" /etc/pacman.conf
 
