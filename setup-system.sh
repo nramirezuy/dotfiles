@@ -11,10 +11,10 @@ grep "ILoveCandy" /etc/pacman.conf > /dev/null ||
   sudo sed -i "/^Color/a ILoveCandy" /etc/pacman.conf
 
 # Refresh keyring
-pacman --noconfirm -Sy archlinux-keyring
+sudo pacman --noconfirm -Sy archlinux-keyring
 
 # Install basics
-pacman --noconfirm --needed -S base-devel git vim
+sudo pacman --noconfirm --needed -S base-devel git vim
 
 # Install yay (AUR helper)
 cd /tmp
