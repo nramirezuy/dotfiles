@@ -40,11 +40,11 @@ grep "ILoveCandy" /etc/pacman.conf > /dev/null ||
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
 # Install yay
-su - $USERNAME &&
+su $USERNAME <<EOF
   cd /tmp &&
   git clone https://aur.archlinux.org/yay.git &&
   cd yay &&
   makepkg --noconfirm -si &&
   cd /tmp &&
   rm -fr yay &&
-exit
+EOF
