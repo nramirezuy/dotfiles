@@ -1,0 +1,4 @@
+TAG,NAME,DESCRIPTION
+PAC,vim,boomer editor
+PAC,xorg-server,graphical server
+GIT,git://git.suckless.org/dwm,windows manager
