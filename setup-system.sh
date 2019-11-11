@@ -15,7 +15,7 @@ echo 'Updating keyring'
 sudo pacman --noconfirm -Sy archlinux-keyring
 
 # Install basics
-# sudo pacman --noconfirm --needed -S base-devel git vim
+sudo pacman --noconfirm --needed -S base-devel git vim
 
 # Install yay (AUR helper)
 echo 'Installing yay!'
