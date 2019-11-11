@@ -1,4 +1,5 @@
 TAG,NAME,DESCRIPTION
+PAC,git,requried to install git programs
 PAC,vim,boomer editor
 PAC,xorg-server,graphical server
 PAC,xorg-xinit,starts graphical server
