@@ -46,6 +46,9 @@ pacman --noconfirm --needed -S grub
 grub-install --target=i386-pc $DRIVE
 grub-mkconfig -o /boot/grub/grub.cfg
 
+# Enable ethernet module on kernel
+echo "tg3" > /etc/modules-load.d/ethernet.conf
+
 # Register username, password and create home
 USERNAME=$3
 PASSWORD=$4
