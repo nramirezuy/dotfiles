@@ -9,4 +9,6 @@ PAC,ttf-inconsolata,monospace font requried to startx
 GIT,https://github.com/nramirezuy/dwm.git,windows manager
 GIT,https://github.com/nramirezuy/dmenu.git,menu manager
 GIT,https://github.com/nramirezuy/st.git,simple terminal
+PAC,gcr,required by surf
+PAC,glib2,required by surf
 GIT,https://github.com/nramirezuy/surf.git,simple web browser
