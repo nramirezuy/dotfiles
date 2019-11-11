@@ -36,7 +36,7 @@ gitinstall() {
   git clone --depth 1 --shallow-submodules "$1" "$dir"
   cd "$dir"
   make
-  make install
+  sudo make install
   cd /tmp
   rm -fr "$dir"
 }

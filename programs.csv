@@ -1,4 +1,12 @@
 TAG,NAME,DESCRIPTION
 PAC,vim,boomer editor
 PAC,xorg-server,graphical server
-GIT,git://git.suckless.org/dwm,windows manager
+PAC,xorg-xinit,starts graphical server
+PAC,libx11,required by dwm
+PAC,libxft,required by dwm
+PAC,libxinerama,required by dwm
+PAC,ttf-inconsolata,monospace font requried to startx
+GIT,https://github.com/nramirezuy/dwm.git,windows manager
+GIT,https://github.com/nramirezuy/dmenu.git,menu manager
+GIT,https://github.com/nramirezuy/st.git,simple terminal
+GIT,https://github.com/nramirezuy/surf.git,simple web browser
