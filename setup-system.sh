@@ -26,29 +26,7 @@ makepkg --noconfirm -si
 cd /tmp
 rm -fr yay
 
-# Install programs.csv
-pacmaninstall() {
-  sudo pacman --noconfirm --needed -S "$1" 
-}
-
-gitinstall() {
-  dir=$(mktemp -d)
-  git clone --depth 1 --shallow-submodules "$1" "$dir"
-  cd "$dir"
-  make
-  sudo make install
-  cd /tmp
-  rm -fr "$dir"
-}
-
-while IFS=, read -r tag program comment; do
-  if [ "$tag" = "TAG" ]; then
-    continue
-  fi
-
-  echo "$program: $comment"
-  case "$tag" in
-    "PAC") pacmaninstall "$program" ;;
-    "GIT") gitinstall "$program" ;;
-  esac
-done < programs.csv;
+# Install packages
+for package in $(ls packages); do
+  package/install.sh
+done
