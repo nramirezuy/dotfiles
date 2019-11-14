@@ -28,5 +28,5 @@ rm -fr yay
 
 # Install packages
 for package in $(ls packages); do
-  package/install.sh
+  packages/$package/install.sh
 done
