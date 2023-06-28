@@ -1,0 +1,6 @@
+
+[user]
+	name = Nicolás Ramírez
+	email = nramirez.uy@gmail.com
+[core]
+	editor = nvim
