@@ -1,0 +1,8 @@
+window:
+  decorations: none
+  startup_mode: Fullscreen
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/zsh
