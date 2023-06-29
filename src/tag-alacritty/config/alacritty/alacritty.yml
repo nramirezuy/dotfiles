@@ -5,4 +5,9 @@ window:
 live_config_reload: true
 
 shell:
-  program: /usr/bin/zsh
+  program: /usr/bin/tmux
+  args:
+    - new-session
+    - -A
+    - -s
+    - default
