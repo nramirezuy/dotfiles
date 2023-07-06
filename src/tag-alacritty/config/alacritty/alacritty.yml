@@ -2,6 +2,9 @@ window:
   decorations: none
   startup_mode: Fullscreen
 
+env:
+  TERM: xterm-256color
+
 live_config_reload: true
 
 shell:
