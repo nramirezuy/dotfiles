@@ -7,3 +7,5 @@
 	excludesFile = ~/.config/git/gitignore
 [alias]
 	push-current = push -u origin HEAD
+[includeIf "gitdir:sullivan-cotter/**"]
+	path = .gitconfig-sullivan-cotter
