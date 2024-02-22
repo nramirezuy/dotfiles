@@ -5,3 +5,5 @@
 [core]
 	editor = nvim
 	excludesFile = ~/.config/git/gitignore
+[alias]
+	push-current = push -u origin HEAD
