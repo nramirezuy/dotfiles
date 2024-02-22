@@ -1,0 +1,19 @@
+# Personal
+.ignore
+
+# Python
+*.egg-info
+*.whl
+.env
+__pycache__
+build
+dist
+
+# Terraform
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+# Neovim plugins
+.projections.json

@@ -4,3 +4,4 @@
 	email = nramirez.uy@gmail.com
 [core]
 	editor = nvim
+	excludesFile = ~/.config/git/gitignore
