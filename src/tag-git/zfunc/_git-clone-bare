@@ -1,0 +1,2 @@
+#compdef git-clone-bare
+#description clone --bare but with refspec
