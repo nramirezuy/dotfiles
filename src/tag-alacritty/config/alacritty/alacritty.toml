@@ -1,0 +1,15 @@
+[window]
+decorations = "None"
+startup_mode = "Fullscreen"
+
+[env]
+TERM = "xterm-256color"
+
+live_config_reload = "true"
+
+[shell]
+program = "/usr/bin/tmux"
+args = ["new-session", "-A", "-s", "default"]
+
+[font]
+size = 17
