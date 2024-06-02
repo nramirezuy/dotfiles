@@ -26,3 +26,11 @@ rcup -t <tag>
 ```
 
 [rcm]: https://github.com/thoughtbot/rcm
+
+### TMUX
+
+To install tpm:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
