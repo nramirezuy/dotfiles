@@ -19,3 +19,5 @@ vim.opt.shiftwidth = 4
 vim.opt.scrolloff = 999 -- scroll from the middle of the screen
 
 vim.opt.virtualedit = "block"
+
+vim.opt.inccommand = "split"
