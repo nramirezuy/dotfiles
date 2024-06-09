@@ -2,6 +2,7 @@ require('nico')
 
 require('rose-pine').setup({ variant = 'moon' })
 vim.cmd('colorscheme rose-pine')
+vim.opt.termguicolors = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
