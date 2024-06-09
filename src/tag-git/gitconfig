@@ -1,4 +1,3 @@
-
 [user]
 	name = Nicolás Ramírez
 	email = nramirez.uy@gmail.com
@@ -9,3 +8,5 @@
 	push-current = push -u origin HEAD
 [includeIf "gitdir:sullivan-cotter/**"]
 	path = .gitconfig-sullivan-cotter
+[commit]
+	gpgsign = true
