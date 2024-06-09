@@ -10,3 +10,5 @@
 	path = .gitconfig-sullivan-cotter
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = main
