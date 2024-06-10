@@ -17,8 +17,8 @@ require("lazy").setup({
         "rose-pine/neovim",
         name = "rose-pine",
         config = function()
-            require('rose-pine').setup({ variant = 'moon' })
-            vim.cmd('colorscheme rose-pine')
+            require("rose-pine").setup({ variant = "moon" })
+            vim.cmd("colorscheme rose-pine")
         end,
     },
     {
@@ -43,6 +43,16 @@ require("lazy").setup({
 
                 highlight = {
                     enable = true,
+                },
+
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = "<leader>ss",
+                        node_incremental = "<Leader>si",
+                        scope_incremental = "<Leader>sc",
+                        node_decremental = "<Leader>sd",
+                    }
                 },
             })
         end,
