@@ -20,5 +20,31 @@ require("lazy").setup({
             require('rose-pine').setup({ variant = 'moon' })
             vim.cmd('colorscheme rose-pine')
         end,
-    }
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {
+                    "c",
+                    "hcl",
+                    "lua",
+                    "make",
+                    "proto",
+                    "python",
+                    "sql",
+                    "toml",
+                    "vim",
+                    "vimdoc",
+                    "query",
+                },
+
+                auto_install = true,
+
+                highlight = {
+                    enable = true,
+                },
+            })
+        end,
+    },
 })
