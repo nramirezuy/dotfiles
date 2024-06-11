@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 
+    {
         "rose-pine/neovim",
         name = "rose-pine",
         config = function()
@@ -78,6 +78,43 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-treesitter/nvim-treesitter-textobjects"
+        "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup({
+                on_init = function(client)
+                    local path = client.workspace_folders[1].name
+                    if (
+                        vim.loop.fs_stat(path..'/.luarc.json')
+                        or vim.loop.fs_stat(path..'/.luarc.jsonc')
+                    ) then
+                        return
+                    end
+
+                    client.config.settings.Lua = vim.tbl_deep_extend(
+                        "force",
+                        client.config.settings.Lua,
+                        {
+                            runtime = {
+                                version = 'LuaJIT'
+                            },
+                            workspace = {
+                                checkThirdParty = false,
+                                library = {
+                                    vim.env.VIMRUNTIME,
+                                    "${3rd}/luv/library",
+                                }
+                            }
+                        }
+                    )
+                end,
+                settings = {
+                    Lua = {}
+                }
+            })
+        end,
     },
 })
