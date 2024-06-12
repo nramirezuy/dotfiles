@@ -27,6 +27,7 @@ require("lazy").setup({
             require("nvim-treesitter.configs").setup({
                 ensure_installed = {
                     "c",
+                    "gitcommit",
                     "hcl",
                     "lua",
                     "make",
