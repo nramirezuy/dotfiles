@@ -39,13 +39,10 @@ require("lazy").setup({
                     "vimdoc",
                     "query",
                 },
-
                 auto_install = true,
-
                 highlight = {
                     enable = true,
                 },
-
                 incremental_selection = {
                     enable = true,
                     keymaps = {
@@ -55,7 +52,6 @@ require("lazy").setup({
                         node_decremental = "<Leader>sd",
                     }
                 },
-
                 textobjects = {
                     select = {
                         enable = true,
@@ -83,13 +79,14 @@ require("lazy").setup({
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = { "hrsh7th/cmp-nvim-lsp" },
         config = function()
             require("plugins.lspconfig")
         end,
     },
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
@@ -101,6 +98,42 @@ require("lazy").setup({
                     builtin.grep_string({ search = vim.fn.input("Grep > ") });
                 end
             )
+        end,
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        config = function()
+              local cmp = require'cmp'
+              cmp.setup({
+                  window = {},
+                  mapping = cmp.mapping.preset.insert({
+                      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                      ['<C-Space>'] = cmp.mapping.complete(),
+                      ['<C-e>'] = cmp.mapping.abort(),
+                      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                  }),
+                  sources = cmp.config.sources({
+                      { name = 'nvim_lsp' },
+                  }, {
+                      { name = 'buffer' },
+                  })
+              })
+              cmp.setup.cmdline({ '/', '?' }, {
+                  mapping = cmp.mapping.preset.cmdline(),
+                  sources = {
+                      { name = 'buffer' }
+                  }
+              })
+              cmp.setup.cmdline(':', {
+                  mapping = cmp.mapping.preset.cmdline(),
+                  sources = cmp.config.sources({
+                      { name = 'path' }
+                  }, {
+                      { name = 'cmdline' }
+                  }),
+                  matching = { disallow_symbol_nonprefix_matching = false }
+              })
         end,
     },
 })
