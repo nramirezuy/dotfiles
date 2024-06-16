@@ -1,6 +1,6 @@
 [window]
 decorations = "None"
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 
 [env]
 TERM = "xterm-256color"
