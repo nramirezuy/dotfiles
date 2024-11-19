@@ -3,7 +3,11 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(find ~/Devel ~/Devel/tarmac/* -mindepth 1 -maxdepth 1 -type d -not -path '*/Devel/tarmac' | fzf)
+	selected=$(
+		find ~/Devel -mindepth 1 -maxdepth 5 -type d -path '**/.git' |
+			sed -e 's|/.git||' |
+			fzf
+	)
 fi
 
 if [[ -z $selected ]]; then
