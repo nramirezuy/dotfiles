@@ -44,6 +44,7 @@ lspconfig.pylsp.setup({
                 ruff = {
                     enabled = true,
                     formatEnabled = true,
+                    executable = "ruff",
                     format = { "I" },
                     lineLength = 79,
                 },
