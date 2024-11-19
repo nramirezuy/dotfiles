@@ -10,4 +10,4 @@ repos:
     hooks:
       - id: shellcheck
       - id: shfmt
-        args: ['-l', '-ci']
+        args: ["-w", "-ci"]
