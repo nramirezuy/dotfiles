@@ -197,5 +197,8 @@ dead-link = "error"
 # Note the use of a pipe and the location of $@.
 #hist = "zk list --format path --delimiter0 --quiet $@ | xargs -t -0 git log --patch --"
 
+# Edit Notebook configuration file.
+config = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
+
 # Edit this configuration file.
-#conf = '$EDITOR "$ZK_NOTEBOOK_DIR/.zk/config.toml"'
+config-global = '$EDITOR "$HOME/.config/zk/config.toml"'
