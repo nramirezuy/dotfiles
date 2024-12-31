@@ -1,14 +1,20 @@
-local lspconfig = require("lspconfig")
+local M = {}
 
+function M.setup(defaults)
+    local lspconfig = require("lspconfig")
 
-lspconfig.dockerls.setup({
-    settings = {
+    local config = defaults
+    config.settings = {
         docker = {
-	        languageserver = {
-	            formatter = {
-		            ignoreMultilineInstructions = true,
-		        }
-	        }
-	    }
+            languageserver = {
+                formatter = {
+                    ignoreMultilineInstructions = true,
+                }
+            }
+        }
     }
-})
+
+    lspconfig.dockerls.setup(config)
+end
+
+return M
