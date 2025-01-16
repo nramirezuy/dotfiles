@@ -6,7 +6,7 @@ local python = require("plugins.lspconfig.python")
 local M = {}
 
 
-local function on_attach(client, bufnr)
+function M.on_attach(client, bufnr)
     if client.supports_method("textDocument/formatting") then
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -44,13 +44,13 @@ end
 function M.setup()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-    local defaults = { capabilities = capabilities, on_attach = on_attach }
+    local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     dockerfile.setup(defaults)
 
-    local defaults = { capabilities = capabilities, on_attach = on_attach }
+    local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     lua.setup(defaults)
 
-    local defaults = { capabilities = capabilities, on_attach = on_attach }
+    local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     python.setup(defaults)
 end
 
