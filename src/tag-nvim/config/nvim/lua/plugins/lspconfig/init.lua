@@ -46,7 +46,11 @@ function M.setup()
 
     local defaults = { capabilities = capabilities, on_attach = on_attach }
     dockerfile.setup(defaults)
+
+    local defaults = { capabilities = capabilities, on_attach = on_attach }
     lua.setup(defaults)
+
+    local defaults = { capabilities = capabilities, on_attach = on_attach }
     python.setup(defaults)
 end
 
