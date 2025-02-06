@@ -47,9 +47,11 @@ function M.setup()
     local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     dockerfile.setup(defaults)
 
+    ---@diagnostic disable-next-line: redefined-local
     local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     lua.setup(defaults)
 
+    ---@diagnostic disable-next-line: redefined-local
     local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     python.setup(defaults)
 end
