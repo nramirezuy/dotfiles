@@ -29,6 +29,7 @@ require("lazy").setup({
                     "c",
                     "gitcommit",
                     "hcl",
+                    "java",
                     "lua",
                     "make",
                     "proto",

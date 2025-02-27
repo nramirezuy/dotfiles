@@ -1,4 +1,5 @@
 local dockerfile = require("plugins.lspconfig.dockerfile")
+local java = require("plugins.lspconfig.java")
 local lua = require("plugins.lspconfig.lua")
 local python = require("plugins.lspconfig.python")
 
@@ -46,6 +47,10 @@ function M.setup()
 
     local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     dockerfile.setup(defaults)
+
+    ---@diagnostic disable-next-line: redefined-local
+    local defaults = { capabilities = capabilities, on_attach = M.on_attach }
+    java.setup(defaults)
 
     ---@diagnostic disable-next-line: redefined-local
     local defaults = { capabilities = capabilities, on_attach = M.on_attach }
