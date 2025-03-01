@@ -1,6 +1,7 @@
 local M = {}
 
 function M.setup(defaults)
+    local lspconfig = require("lspconfig")
     local typescript_tools = require("typescript-tools")
 
     local config = defaults
@@ -17,6 +18,9 @@ function M.setup(defaults)
     }
 
     typescript_tools.setup(config)
+
+    config.settings = {}
+    lspconfig.eslint.setup(defaults)
 end
 
 return M
