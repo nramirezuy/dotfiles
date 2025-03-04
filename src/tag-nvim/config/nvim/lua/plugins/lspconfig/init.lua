@@ -1,3 +1,4 @@
+local dockercompose = require("plugins.lspconfig.dockercompose")
 local dockerfile = require("plugins.lspconfig.dockerfile")
 local java = require("plugins.lspconfig.java")
 local lua = require("plugins.lspconfig.lua")
@@ -46,6 +47,11 @@ end
 function M.setup()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+    ---@diagnostic disable-next-line: redefined-local
+    local defaults = { capabilities = capabilities, on_attach = M.on_attach }
+    dockercompose.setup(defaults)
+
+    ---@diagnostic disable-next-line: redefined-local
     local defaults = { capabilities = capabilities, on_attach = M.on_attach }
     dockerfile.setup(defaults)
 
