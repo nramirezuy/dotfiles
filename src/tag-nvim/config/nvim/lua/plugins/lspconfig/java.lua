@@ -6,7 +6,7 @@ function M.setup(defaults)
     local config = defaults
     config.cmd = {
         "jdtls",
-        "--java-executable", "/usr/lib/jvm/java-23-openjdk/bin/java",
+        "--java-executable", "/usr/lib/jvm/java-24-openjdk/bin/java",
         "-configuration", vim.fn.expand("$HOME/.cache/jdtls/config"),
         "-data", vim.fn.expand("$HOME/.cache/jdtls/workspace"),
     }
