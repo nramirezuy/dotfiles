@@ -14,7 +14,9 @@ function M.setup(defaults)
     -- Add Java Agents
     local maven_repository = vim.fn.expand("$HOME/.m2/repository/")
     local java_agents = {
-        lombok = vim.fn.glob(maven_repository .. "**/*lombok*.jar"),
+        lombok = vim.fn.glob(
+            maven_repository .. "**/*lombok*.jar"
+        ):match("^[^\n]+"),
     }
 
     for _, file in pairs(java_agents) do
