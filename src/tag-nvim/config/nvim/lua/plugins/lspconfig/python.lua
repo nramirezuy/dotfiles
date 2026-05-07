@@ -13,6 +13,7 @@ function M.setup(defaults)
                     executable = "ruff",
                     format = { "I" },
                     lineLength = 79,
+                    unsafeFixes = true,
                 },
                 pylsp_mypy = {
                     enabled = true,
