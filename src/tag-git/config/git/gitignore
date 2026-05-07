@@ -1,5 +1,6 @@
 # Personal
 .ignore
+.scrapy
 
 # Python
 *.egg-info
