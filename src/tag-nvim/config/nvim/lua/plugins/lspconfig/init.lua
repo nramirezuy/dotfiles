@@ -10,7 +10,7 @@ local M = {}
 
 
 function M.on_attach(client, bufnr)
-    if client.supports_method("textDocument/formatting")
+    if client:supports_method("textDocument/formatting")
         and client.name ~= "docker_compose_language_service"
     then
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

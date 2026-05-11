@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(defaults)
-    local lspconfig = require("lspconfig")
+    local lsp_name = "eslint"
     local typescript_tools = require("typescript-tools")
 
     local config = defaults
@@ -20,7 +20,8 @@ function M.setup(defaults)
     typescript_tools.setup(config)
 
     config.settings = {}
-    lspconfig.eslint.setup(defaults)
+    vim.lsp.config(lsp_name, config)
+    vim.lsp.enable(lsp_name)
 end
 
 return M

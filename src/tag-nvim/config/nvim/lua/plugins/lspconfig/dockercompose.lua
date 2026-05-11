@@ -1,11 +1,12 @@
 local M = {}
 
 function M.setup(defaults)
-    local lspconfig = require("lspconfig")
+    local lsp_name =  'docker_compose_language_service'
 
     local config = defaults
 
-    lspconfig.docker_compose_language_service.setup(config)
+    vim.lsp.config(lsp_name, config)
+    vim.lsp.enable(lsp_name)
 end
 
 return M

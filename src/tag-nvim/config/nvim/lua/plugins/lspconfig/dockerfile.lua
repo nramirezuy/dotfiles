@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(defaults)
-    local lspconfig = require("lspconfig")
+    local lsp_name = 'dockerls'
 
     local config = defaults
     config.settings = {
@@ -14,7 +14,8 @@ function M.setup(defaults)
         }
     }
 
-    lspconfig.dockerls.setup(config)
+    vim.lsp.config(lsp_name, config)
+    vim.lsp.enable(lsp_name)
 end
 
 return M

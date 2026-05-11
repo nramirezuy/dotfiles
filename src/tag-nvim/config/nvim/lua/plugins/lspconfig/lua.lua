@@ -1,8 +1,7 @@
 local M = {}
 
 function M.setup(defaults)
-    local lspconfig = require("lspconfig")
-
+    local lsp_name = "lua_ls"
 
     local config = defaults
     config.on_init = function(client)
@@ -32,7 +31,8 @@ function M.setup(defaults)
         )
     end
     config.settings = { Lua = { format = { enable = true } } }
-    lspconfig.lua_ls.setup(config)
+    vim.lsp.config(lsp_name, config)
+    vim.lsp.enable(lsp_name)
 end
 
 return M

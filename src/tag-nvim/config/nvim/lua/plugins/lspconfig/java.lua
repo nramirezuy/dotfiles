@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(defaults)
-    local lspconfig = require("lspconfig")
+    local lsp_name = "jdtls"
 
     local config = defaults
     config.cmd = {
@@ -23,7 +23,8 @@ function M.setup(defaults)
         table.insert(config.cmd, "--jvm-arg=-javaagent:" .. file)
     end
 
-    lspconfig.jdtls.setup(config)
+    vim.lsp.config(lsp_name, config)
+    vim.lsp.enable(lsp_name)
 end
 
 return M
